@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL Ticket Booking</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+    <h1>IPL Ticket Booking</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#booking">Book Ticket</a>
+    </nav>
+</header>
+
+<section class="booking-section" id="booking">
+    <h2>Book Your IPL Tickets</h2>
+
+    <form id="bookingForm">
+        <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" pattern="[0-9]{10}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="match">Select Match</label>
+            <select id="match" required>
+                <option value="">Choose Match</option>
+                <option value="RCB vs MI">RCB vs MI</option>
+                <option value="CSK vs KKR">CSK vs KKR</option>
+                <option value="RR vs GT">RR vs GT</option>
+                <option value="PBKS vs RCB">PBKS vs RCB</option>
+                <option value="RR vs CSK">RR vs CSK</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="stand">Stand Category</label>
+            <select id="stand" required>
+                <option value="">Choose Stand</option>
+                <option value="General">General - ₹500</option>
+                <option value="Premium">Premium - ₹1000</option>
+                <option value="VIP">VIP - ₹2000</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="tickets">Number of Tickets</label>
+            <input type="number" id="tickets" min="1" max="5" value="1" required>
+        </div>
+
+        <div class="form-group preference-group">
+            <label>Seating Preference</label>
+            <label><input type="radio" name="preference" value="Regular" checked> Regular</label>
+            <label><input type="radio" name="preference" value="Near Boundary"> Near Boundary</label>
+        </div>
+
+        <div class="form-buttons">
+            <button type="submit" class="main-button">Book Ticket</button>
+            <button type="reset" class="main-button">Reset</button>
+        </div>
+    </form>
+
+    <div class="booking-summary">
+        <h2>Booking Summary</h2>
+        <p>Match: <span id="summaryMatch">Not selected</span></p>
+        <p>Stand: <span id="summaryStand">Not selected</span></p>
+        <p>Ticket Quantity: <span id="summaryTickets">1</span></p>
+        <p>Price Per Ticket: ₹<span id="summaryPrice">0</span></p>
+        <h3>Total Price: ₹<span id="totalPrice">0</span></h3>
+    </div>
+
+    <p id="successMessage" class="success-message"></p>
+</section>
+
+<footer>
+    <p>IPL Ticket Booking Website</p>
+</footer>
+
+</body>
+</html>
